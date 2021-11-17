@@ -1,6 +1,9 @@
 package com.example.notebook.service;
 
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.notebook.entity.Note;
 import com.example.notebook.repository.NoteRepository;
@@ -13,7 +16,9 @@ public class NoteServiceImpl implements NoteService{
 
     private NoteRepository repository;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public NoteServiceImpl(Context context) {
+
         this.repository = new JdbcNoteRepository(context);
     }
 

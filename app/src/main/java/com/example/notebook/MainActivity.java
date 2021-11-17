@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements FragmentNotesList
 
     private NoteController controller;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

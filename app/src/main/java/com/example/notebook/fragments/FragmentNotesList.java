@@ -54,8 +54,8 @@ public class FragmentNotesList extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_notes_list, container, false);
         if (getArguments() != null) {
-            Log.d(LOG, "args " + controller);
             controller = (NoteController) getArguments().getSerializable(KEY_CONTROLLER);
+            Log.d(LOG, "args controller " + controller);
         }
         activity = (MainActivity) getActivity();
         initViews(view);

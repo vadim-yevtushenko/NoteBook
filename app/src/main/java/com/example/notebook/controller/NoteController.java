@@ -1,7 +1,10 @@
 package com.example.notebook.controller;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 import com.example.notebook.entity.Note;
 import com.example.notebook.repository.NoteRepository;
@@ -17,6 +20,7 @@ public class NoteController implements Serializable {
     private NoteService service;
     public static final String LOG = "myLog";
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public NoteController(Context context) {
         Log.d(LOG, "NoteController");
         this.service = new NoteServiceImpl(context);

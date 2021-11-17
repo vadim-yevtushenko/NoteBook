@@ -83,10 +83,6 @@ public class NotesRVAdapter extends RecyclerView.Adapter<NotesRVAdapter.NoteRecy
         return notes.size();
     }
 
-    private String getDateTimeString(LocalDateTime dateTime) {
-        return dateTime.toString();
-    }
-
     class NoteRecyclerViewHolder extends RecyclerView.ViewHolder {
 
         private ConstraintLayout itemLayout;
