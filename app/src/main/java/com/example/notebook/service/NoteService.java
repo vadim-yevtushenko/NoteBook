@@ -1,7 +1,6 @@
 package com.example.notebook.service;
 
 import com.example.notebook.entity.Note;
-import com.example.notebook.repository.NoteRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,7 +17,5 @@ public interface NoteService {
 
     void update(Note note);
 
-    Note create(Note note);
-
-    NoteRepository getRepository();
+    void create(Note note);
 }

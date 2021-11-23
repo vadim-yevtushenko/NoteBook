@@ -7,7 +7,6 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 
 import com.example.notebook.entity.Note;
-import com.example.notebook.repository.NoteRepository;
 import com.example.notebook.service.NoteService;
 import com.example.notebook.service.NoteServiceImpl;
 
@@ -51,9 +50,9 @@ public class NoteController implements Serializable {
         service.update(note);
     }
 
-    public Note create(Note note) {
+    public void create(Note note) {
         Log.d(LOG, "create " + note);
-        return service.create(note);
+        service.create(note);
     }
 
     public NoteService getService() {

@@ -13,8 +13,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.notebook.controller.NoteController;
+import com.example.notebook.entity.Note;
 import com.example.notebook.fragments.FragmentNote;
 import com.example.notebook.fragments.FragmentNotesList;
+
+import java.time.LocalDateTime;
+import java.time.Month;
 
 import static com.example.notebook.controller.NoteController.LOG;
 
@@ -44,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements FragmentNotesList
         controller = new NoteController(this);
         fragmentNotesList = new FragmentNotesList();
         fragmentNote = new FragmentNote();
-
 
         setNotesListFragment();
 
@@ -115,9 +118,32 @@ public class MainActivity extends AppCompatActivity implements FragmentNotesList
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onDestroy() {
-        controller.getService().getRepository().closeDataBase();
-        super.onDestroy();
-    }
+//    @RequiresApi(api = Build.VERSION_CODES.O)
+//    private void temp() {
+//        Note note1 = new Note("SOLID",
+//                "Single responsibility — принцип единственной ответственности\n" +
+//                        "Open-closed — принцип открытости / закрытости\n" +
+//                        "Liskov substitution — принцип подстановки Барбары Лисков\n" +
+//                        "Interface segregation — принцип разделения интерфейса\n" +
+//                        "Dependency inversion — принцип инверсии зависимостей",
+//                LocalDateTime.of(2021, Month.OCTOBER, 30, 10, 0));
+//        Note note2 = new Note("KISS",
+//                "Single responsibility — принцип единственной ответственности\n" +
+//                        "Open-closed — принцип открытости / закрытости\n" +
+//                        "Liskov substitution — принцип подстановки Барбары Лисков\n" +
+//                        "Interface segregation — принцип разделения интерфейса\n" +
+//                        "Dependency inversion — принцип инверсии зависимостей",
+//                LocalDateTime.of(2021, Month.NOVEMBER, 16, 12, 0));
+//        Note note3 = new Note("DRY",
+//                "Single responsibility — принцип единственной ответственности\n" +
+//                        "Open-closed — принцип открытости / закрытости\n" +
+//                        "Liskov substitution — принцип подстановки Барбары Лисков\n" +
+//                        "Interface segregation — принцип разделения интерфейса\n" +
+//                        "Dependency inversion — принцип инверсии зависимостей",
+//                LocalDateTime.of(2021, Month.NOVEMBER, 17, 15, 0));
+//
+//        controller.create(note1);
+//        controller.create(note2);
+//        controller.create(note3);
+//    }
 }

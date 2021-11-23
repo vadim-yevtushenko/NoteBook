@@ -1,10 +1,14 @@
 package com.example.notebook.entity;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
-
+@Entity
 public class Note {
 
+    @PrimaryKey(autoGenerate = true)
     private Integer id;
     private String name;
     private String note;
