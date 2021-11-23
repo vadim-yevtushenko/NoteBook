@@ -5,21 +5,14 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
-import android.util.Log;
-
 import androidx.annotation.RequiresApi;
 
-import com.example.notebook.controller.NoteController;
 import com.example.notebook.entity.Note;
 import com.example.notebook.util.Utils;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static com.example.notebook.repository.DataBaseHelper.*;

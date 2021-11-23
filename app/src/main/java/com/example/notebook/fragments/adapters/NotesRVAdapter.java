@@ -52,8 +52,8 @@ public class NotesRVAdapter extends RecyclerView.Adapter<NotesRVAdapter.NoteRecy
     @Override
     public void onBindViewHolder(@NonNull NoteRecyclerViewHolder holder, int position) {
         holder.tvName.setText(notes.get(position).getName());
-        if (notes.get(position).getNote().length() > 20) {
-            holder.tvNote.setText(notes.get(position).getNote().substring(0, 20));
+        if (notes.get(position).getNote().length() > 50) {
+            holder.tvNote.setText(notes.get(position).getNote().substring(0, 50));
         } else {
             holder.tvNote.setText(notes.get(position).getNote());
         }

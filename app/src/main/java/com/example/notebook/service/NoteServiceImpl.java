@@ -18,7 +18,6 @@ public class NoteServiceImpl implements NoteService{
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public NoteServiceImpl(Context context) {
-
         this.repository = new JdbcNoteRepository(context);
     }
 

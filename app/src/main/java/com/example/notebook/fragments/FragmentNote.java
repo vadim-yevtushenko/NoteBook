@@ -23,13 +23,9 @@ import com.example.notebook.R;
 import com.example.notebook.controller.NoteController;
 import com.example.notebook.entity.Note;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static com.example.notebook.MainActivity.ALL;
-import static com.example.notebook.MainActivity.FOR_MONTH;
-import static com.example.notebook.MainActivity.FOR_WEEK;
 import static com.example.notebook.controller.NoteController.LOG;
 
 public class FragmentNote extends Fragment {
@@ -59,7 +55,7 @@ public class FragmentNote extends Fragment {
         activity = (MainActivity) getActivity();
         dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
         initViews(view);
-        pullNote(id);
+        pullNoteFromDB(id);
         ivSave.setOnClickListener(this::save);
         ivBack.setOnClickListener(this::back);
         setHasOptionsMenu(true);
@@ -67,7 +63,7 @@ public class FragmentNote extends Fragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void pullNote(int id) {
+    private void pullNoteFromDB(int id) {
         if (id > 0) {
             note = controller.get(id);
             etHead.setText(note.getName());

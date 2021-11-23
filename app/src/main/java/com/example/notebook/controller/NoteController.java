@@ -7,7 +7,6 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 
 import com.example.notebook.entity.Note;
-import com.example.notebook.repository.NoteRepository;
 import com.example.notebook.service.NoteService;
 import com.example.notebook.service.NoteServiceImpl;
 
