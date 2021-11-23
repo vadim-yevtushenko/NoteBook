@@ -80,6 +80,12 @@ public class FragmentNotesList extends Fragment {
         tvNumbersNotes.setText(getStringSize());
     }
 
+    public void updateRecyclerList(){
+        notesRVAdapter.setNotes(notesList);
+        notesRVAdapter.notifyDataSetChanged();
+        tvNumbersNotes.setText(getStringSize());
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void createNotesListForPeriod(int period){
         switch (period){
@@ -96,7 +102,7 @@ public class FragmentNotesList extends Fragment {
                 break;
             }
         }
-        createRecyclerList();
+        updateRecyclerList();
     }
 
     public void deleteNote(int id){

@@ -69,7 +69,7 @@ public class NotesRVAdapter extends RecyclerView.Adapter<NotesRVAdapter.NoteRecy
                     setMessage("Note will be deleted!").
                     setPositiveButton("YES", (dialog, which) -> {
                         fragmentNotesList.deleteNote(notes.get(position).getId());
-                        fragmentNotesList.createRecyclerList();
+                        fragmentNotesList.updateRecyclerList();
                     }).
                     setNeutralButton("CANCEL", (dialog, which) -> {
                     });
@@ -97,5 +97,9 @@ public class NotesRVAdapter extends RecyclerView.Adapter<NotesRVAdapter.NoteRecy
             tvNote = itemView.findViewById(R.id.tvNote);
             tvDateTime = itemView.findViewById(R.id.tvDateTime);
         }
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 }
